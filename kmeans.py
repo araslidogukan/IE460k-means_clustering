@@ -1,4 +1,3 @@
-#Dogukan Arasli
 import numpy as np
 def my_kmeans(data,k):
     num_of_rows = data.shape[0]  #Store the number of rows
