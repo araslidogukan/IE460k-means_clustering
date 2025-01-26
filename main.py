@@ -1,12 +1,11 @@
 import pandas as pd
 import numpy as np
 from math import inf
-import matplotlib.pyplot as plt
 import time
 from kmeans import my_kmeans
 from bisecting_kmeans import my_bisecting_kmeans
 
-df = pd.read_excel('data_directory_xlsx',header=None) #Assuming data is in the correct form with attribute values on columns and every row is a different data point
+df = pd.read_excel('data_directory.xlsx',header=None) #Assuming data is in the correct form with attribute values on columns and every row is a different data point
 dermat = df.values
 
 for num_of_clusters in range(3,11):
@@ -32,7 +31,7 @@ for num_of_clusters in range(3,11):
     sse_a_list.append(best_sse_a)
     time_a_list.append(sec)
 
-    #Bisecting Kmeans with 50 iters everytime
+    #Bisecting Kmeans with 50 calls of k-means at every bisection
     start = time.time()
     time_b50_list = []
     SSE_list, cluster_assignments_b50 = my_bisecting_kmeans(dermat,num_of_clusters,50)
@@ -47,7 +46,7 @@ for num_of_clusters in range(3,11):
     sse_b50_list.append(SSE_b50)
     time_b50_list.append(sec)
 
-    #Bisecting Kmeans with 100 iters everytime
+    #Bisecting Kmeans with 100 calls of k-means at every bisection
     start = time.time()
     time_b100_list = []
     SSE_list, cluster_assignments_b100 = my_bisecting_kmeans(dermat,num_of_clusters,100)
