@@ -1,4 +1,4 @@
-K-MEANS CLUSTERING
+**K-MEANS CLUSTERING**
 
 This repository includes implementations of k-means and bisecting k-means algorithms from scratch on Python using numpy library.
 
