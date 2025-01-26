@@ -1,7 +1,6 @@
-#Dogukan Arasli 2517522
 import numpy as np
 from math import inf
-from kmeans_ID2517522 import my_kmeans
+from kmeans import my_kmeans
 def my_bisecting_kmeans(whole_data,k,num_of_kmeans_iters):
     #Initialize the outputs as empty arrays
     SSEs = np.zeros(k)
