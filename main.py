@@ -1,13 +1,12 @@
-#Dogukan Arasli 2517522
 import pandas as pd
 import numpy as np
 from math import inf
 import matplotlib.pyplot as plt
 import time
-from kmeans_ID2517522 import my_kmeans
-from bisecting_kmeans_ID2517522 import my_bisecting_kmeans
+from kmeans import my_kmeans
+from bisecting_kmeans import my_bisecting_kmeans
 
-df = pd.read_excel('CA1_ID2517522_PartI/dermatology.xlsx',header=None)
+df = pd.read_excel('data_directory_xlsx',header=None) #Assuming data is in the correct form with attribute values on columns and every row is a different data point
 dermat = df.values
 
 for num_of_clusters in range(3,11):
